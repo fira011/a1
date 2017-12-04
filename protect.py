@@ -1702,10 +1702,21 @@ def bot(op):
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Emid}
                 kt.sendMessage(msg)
-                
+#-----------------------------++++-----------------
+            elif "kick on",".kickall","kick","cleanse","nuke" in msg.text.lower():
+              if msg.from_ not in admin:
+                    try:
+                        cl.sendText(msg.to,"Mau ngapain?")
+                        cl.kickoutFromGroup(msg.to,[msg.from_])
+                    except:
+                        pass
 #=======================================================
-                
-                
+            elif msg.text.lower() == "crash":
+              if msg.from_ in admin:
+                msg.contentType = 13
+                msg.contentMetadata = {'mid': "c33b66e4b7709e54a6fe6eced6e57c157',"}
+                cl.sendMessage(msg)
+#-----------------=============================   
             elif msg.text in ["Me"]:
 	      if msg.from_ in admin:
                 msg.contentType = 13
@@ -2047,13 +2058,7 @@ def bot(op):
                 cl.sendText(msg.to,"[display name]\n" + str(ginfo.name) + "\n[Group Id]\n" + msg.to + "\n\n[Group Creator]\n" + gCreator + "\n\nmembers:" + str(len(ginfo.members)) + "\nInvitation:" + sinvitee + "")
                 cl.sendMessage(msg)
 #------------------------_--------------------------------------
-            elif ["kick on",".kickall","Kick","Cleanse"] in msg.text:
-              if msg.from_ not in admin:
-                    try:
-                        cl.sendText(msg.to,"Mau ngapain?")
-                        cl.kickoutFromGroup(msg.to,[msg.from_])
-                    except:
-                        pass
+ 
 #===============================================================
             elif 'group list' in msg.text.lower():
               if msg.from_ in admin:
@@ -2718,23 +2723,22 @@ def bot(op):
             elif msg.text.lower() == 'responsename':
               if msg.from_ in admin:
                 profile = cl.getProfile()
-                text = profile.displayName + "ღḯḉḯη-тєαм"
+                text = profile.displayName + " "
                 cl.sendText(msg.to, text)
                 profile = ki.getProfile()
-                text = profile.displayName + "ღḯḉḯη-тєαм" 
+                text = profile.displayName + " " 
                 ki.sendText(msg.to, text)
                 profile = kk.getProfile()
-                text = profile.displayName + "ღḯḉḯη-тєαм"
-		
+                text = profile.displayName + " "
                 kk.sendText(msg.to, text)
                 profile = kc.getProfile()
-                text = profile.displayName + "ღḯḉḯη-тєαм"
+                text = profile.displayName + " "
                 kc.sendText(msg.to, text)
                 profile = ks.getProfile()
-                text = profile.displayName + "ღḯḉḯη-тєαм"
+                text = profile.displayName + " "
                 ks.sendText(msg.to, text)
                 profile = kt.getProfile()
-                text = profile.displayName + "ღḯḉḯη-тєαм"
+                text = profile.displayName + ""
                 kt.sendText(msg.to, text)
 
 #========================================
@@ -3094,10 +3098,7 @@ def bot(op):
                             cl.sendText(msg.to,h)
                         except Exception as error:
                             cl.sendText(msg.to,(error))#-------------------------------------------------------
-            elif 'Crash' in msg.text:
-                msg.contentType = 13
-                msg.contentMetadata = {'mid': "c33b66e4b7709e54a6fe6eced6e57c157"}
-                cl.sendMessage(msg)
+            
             #--------------------------------------------------------
 	    elif "Ban group: " in msg.text:
 		grp = msg.text.replace("Ban group: ","")
