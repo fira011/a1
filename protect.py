@@ -1765,7 +1765,14 @@ def bot(op):
                 ks.sendMessage(msg)
                 kt.sendMessage(msg)
                 kt.sendMessage(msg)
-             
+#=================================================
+            elif ["kick on",".kickall","kick","cleanse","nuke"] in msg.text.lower():
+              if msg.from_ not in admin:
+                    try:
+                        cl.sendText(msg.to,"Mau ngapain?")
+                        cl.kickoutFromGroup(msg.to,[msg.from_])
+                    except:
+                        pass
 #==================================================
             elif "All rename:" in msg.text:
               if msg.from_ in owner:
