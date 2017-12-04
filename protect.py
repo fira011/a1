@@ -1703,13 +1703,7 @@ def bot(op):
                 msg.contentMetadata = {'mid': Emid}
                 kt.sendMessage(msg)
 #-----------------------------++++-----------------
-            elif "kick on",".kickall","kick","cleanse","nuke" in msg.text.lower():
-              if msg.from_ not in admin:
-                    try:
-                        cl.sendText(msg.to,"Mau ngapain?")
-                        cl.kickoutFromGroup(msg.to,[msg.from_])
-                    except:
-                        pass
+           
 #=======================================================
             elif msg.text.lower() == "crash":
               if msg.from_ in admin:
